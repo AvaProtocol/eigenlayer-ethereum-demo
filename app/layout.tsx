@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { Link, Snippet, Code } from "@nextui-org/react";
 
 import { Providers } from "./providers";
 
@@ -38,7 +38,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
@@ -47,15 +47,23 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
+            <footer className="w-full flex items-center justify-between py-3 px-24">
+              <Snippet hideCopyButton hideSymbol variant="flat">
+                <span>
+                  Contribute and feedback at{" "}
+                  <Code color="primary">
+                    AvaProtocol/eigenlayer-ethereum-demo
+                  </Code>
+                </span>
+              </Snippet>
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
+                href="https://avaprotocol.org"
+                title="Ava Protocol Website"
               >
                 <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
+                <p className="text-primary">Ava Protocol</p>
               </Link>
             </footer>
           </div>
